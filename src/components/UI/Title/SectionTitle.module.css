@@ -1,0 +1,24 @@
+.container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .marquee {
+    display: inline-flex;
+    will-change: transform;
+    width: 100%;
+    display: flex;
+    gap: 15rem;
+  }
+  
+  .text {
+    font-size: 120px; /* Tamaño del texto */
+    font-weight: bold;
+    font-family: "Rubik Maze", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #6c63ff;
+  }
+  

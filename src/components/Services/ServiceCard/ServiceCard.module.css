@@ -1,0 +1,75 @@
+.card {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    border-bottom: 1px solid #F2F9FF;
+    text-align: center;
+    width: 100%;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .card_header{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    & h3{
+        font-size: 30px;
+        font-weight: 600;
+        text-align: left;
+        color: #F2F9FF;
+        text-transform: uppercase;
+        & span{
+            font-family: "Rubik Maze", system-ui;
+            color: #6c63ff;
+        }
+    }
+  }
+  .card_content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .card_description{
+        width: auto;
+        max-width: 45%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        & p{
+            text-align: left;
+            font-size: 22px;
+            color: #F2F9FF;
+            font-weight: 300;
+        }
+    }
+    .card_image{
+        width: 45%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        & img{
+            height: 200px;
+            width: auto;
+        }
+    }
+  }
+  
+  .image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .description {
+    font-size: 14px;
+    color: #555;
+  }
+  

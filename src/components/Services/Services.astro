@@ -1,0 +1,20 @@
+---
+import styles from "./Services.module.css";
+import SectionTitle from "../UI/Title/SectionTitle.jsx";
+import ServiceSection from "../Services/ServiceSection/ServiceSection";
+---
+
+<div class={styles.services_container}>
+    <div class={styles.title_container}>
+        <SectionTitle title="Nuestros Servicios" client:visible/>
+    </div>
+    <div class={styles.subtitle_container}>
+        <h3>Ofrecemos <span>soluciones completas y personalizadas</span> en desarrollo web para ayudar a tu negocio a crecer en línea. 
+            Desde la creación de páginas web, sistemas web, hasta el soporte continuo con mantenimiento, hosting y consultoría. 
+            <span>Nos encargamos de todo para que tú no tengas que preocuparte por nada</span>.
+        </h3>
+    </div>
+    <div class={styles.services_section_container}>
+        <ServiceSection client:visible/>
+    </div>
+</div>
