@@ -1,21 +1,11 @@
 .services_section {
     width: 100%;
+    height: 100%;
     display: flex;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     gap: 2rem;
-    margin-top: 2rem;
-    padding-bottom: 1rem;
-    scroll-padding: 0 10px;
-    
-    /* Ocultar la barra de scroll */
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
-  .services_section::-webkit-scrollbar {
-    display: none; /* Oculta la barra de scroll en Webkit (Chrome, Safari) */
   }
   
   .card {

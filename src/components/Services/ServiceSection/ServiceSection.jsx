@@ -1,6 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import ServiceCard from "../ServiceCard/ServiceCard";
-import { gsap } from "gsap";
 import styles from "./ServiceSection.module.css";
 
 const servicesData = [
@@ -37,70 +36,14 @@ const servicesData = [
 ];  
 
 const ServiceSection = () => {
-  const sectionRef = useRef(null);
-  const cardsRef = useRef([]);
-  const isDragging = useRef(false);
-  const startX = useRef(0);
-  const scrollLeft = useRef(0);
-
-  // Función para manejar el drag
-  const handleDragStart = (e) => {
-    isDragging.current = true;
-    startX.current = e.clientX;
-    scrollLeft.current = sectionRef.current.scrollLeft;
-  };
-
-  const handleDragMove = (e) => {
-    if (!isDragging.current) return;
-
-    const x = e.clientX - startX.current;
-    sectionRef.current.scrollLeft = scrollLeft.current - x;
-  };
-
-  const handleDragEnd = () => {
-    isDragging.current = false;
-  };
-
-  // Función para manejar el scroll horizontal
-  const handleScroll = (event) => {
-    const scrollDirection = event.deltaX > 0 ? "right" : "left";
-
-    let nextCard = 1;
-
-    if (scrollDirection === "right") {
-      nextCard = Math.min(cardsRef.current.length, 1 + cardsRef.current.indexOf(document.querySelector('.active-card'))); // En caso de avanzar
-    } else if (scrollDirection === "left") {
-      nextCard = Math.max(0, 1 - cardsRef.current.indexOf(document.querySelector('.active-card'))); // Retroceder
-    }
-
-    const targetCard = cardsRef.current[nextCard];
-    gsap.to(sectionRef.current, {
-      scrollTo: { x: targetCard.offsetLeft, autoKill: false },
-      duration: 0.5,
-      ease: "power2.out",
-    });
-  };
-
-  useEffect(() => {
-    window.addEventListener("wheel", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("wheel", handleScroll);
-    };
-  }, []);
 
   return (
     <section
       className={styles.services_section}
-      ref={sectionRef}
-      onMouseDown={handleDragStart}
-      onMouseMove={handleDragMove} 
-      onMouseUp={handleDragEnd}
-      onMouseLeave={handleDragEnd}
     >
       {servicesData.map(({ number, title, description, image }) => (
         <div
           key={number}
-          ref={(el) => (cardsRef.current[number - 1] = el)}
           id={`service-card-${number}`}
           className={styles.card}
         >

@@ -1,75 +1,107 @@
 .card {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
-    border-bottom: 1px solid #F2F9FF;
-    text-align: center;
-    width: 100%;
-    min-height: 350px;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
+  opacity: 0.9; /* Nivel inicial de opacidad */
+  transition: opacity 0.3s ease-in-out;
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid #6c63ff;
+  height: 70px;
+  max-height: 350px; /* Altura expandida */
+  overflow: hidden; /* Esconde contenido al colapsar */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  cursor: pointer;
+}
 
-  .card_header{
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1rem;
-    & h3{
-        font-size: 30px;
-        font-weight: 600;
-        text-align: left;
-        color: #F2F9FF;
-        text-transform: uppercase;
-        & span{
-            font-family: "Rubik Maze", system-ui;
-            color: #6c63ff;
-        }
-    }
-  }
-  .card_content{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.card_header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .card_description{
-        width: auto;
-        max-width: 45%;
-        height: 100%;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        & p{
-            text-align: left;
-            font-size: 22px;
-            color: #F2F9FF;
-            font-weight: 300;
-        }
-    }
-    .card_image{
-        width: 45%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        & img{
-            height: 200px;
-            width: auto;
-        }
-    }
-  }
-  
-  .image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .description {
-    font-size: 14px;
-    color: #555;
-  }
-  
+.card_title{
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+.card_header h3 {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: left;
+  color: #F2F9FF;
+  text-transform: uppercase;
+}
+
+.card_header h3 span {
+  font-family: "Rubik Maze", system-ui;
+  color: #6c63ff;
+}
+
+.card_content {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0; /* Oculto inicialmente */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.card_content .card_description {
+  width: auto;
+  max-width: 45%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.icon {
+  border: 2px solid #6c63ff;
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #f2f9ff;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.card_content .card_description p {
+  text-align: left;
+  font-size: 22px;
+  color: #F2F9FF;
+  font-weight: 300;
+}
+
+.card_content .card_image {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.card_content .card_image img {
+  height: 200px;
+  width: auto;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.description {
+  font-size: 14px;
+  color: #555;
+}
+
+/* GSAP trabajará con estos cambios de altura y opacidad */

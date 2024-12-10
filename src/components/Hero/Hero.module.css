@@ -17,17 +17,18 @@
   .hero_container {
     width: 85%;
     height: 100%;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     position: relative;
-    margin-top: 3rem;
     margin-left: auto;
     margin-right: auto;
     z-index: 1;
 
     .title {
         width: 100%;
-        height: 220px;
+        height: 15%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -48,13 +49,13 @@
     }
     .hero_content{
       width: 100%;
-      height: 100%;
+      height: 60%;
       display: flex;
       justify-content: space-around;
-      align-items: flex-start;
+      align-items: center;
       .subtitle_container{
         width: 55%;
-        height: auto;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -107,14 +108,13 @@
         }
       }
       .hero_image{
-        width: auto;
-        height: 100%;
+        width: 35%;
+        height: 80%;
         display: flex;
         justify-content: center;
         align-items: flex-start;
         & img{
           position: relative;
-          width: 450px;
           height: auto;
         }
       }

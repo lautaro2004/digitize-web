@@ -31,7 +31,7 @@ const GlobeContent = () => {
   });
 
   return (
-    <group ref={pointsRef} scale={[3, 3, 3]} position={[0, 2, 0]}>
+    <group ref={pointsRef} scale={[3, 3, 3]} position={[0, 0, 0]}>
       {/* Aumenta el tamaño de la esfera */}
       <Sphere args={[1, 38, 38]}>
         <meshStandardMaterial color="#6c63ff" wireframe />
@@ -46,12 +46,16 @@ const GlobeContent = () => {
 // Componente principal para el Canvas
 const Globe = () => {
   return (
-    <Canvas camera={{ position: [5, 5, 5] }}>
+    <Canvas camera={{ position: [0, 0, 5] }}>
       {/* Ajustes de iluminación */}
       <ambientLight intensity={0.5} />
       <directionalLight position={[5, 5, 5]} />
       <GlobeContent />
-      <OrbitControls enableZoom={false} />
+      <OrbitControls
+        enableZoom={false}
+        minPolarAngle={Math.PI / 4} // Límite inferior
+        maxPolarAngle={Math.PI - Math.PI / 4} // Límite superior
+      />
     </Canvas>
   );
 };
