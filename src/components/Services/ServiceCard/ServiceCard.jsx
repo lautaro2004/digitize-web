@@ -3,12 +3,15 @@ import { gsap } from "gsap";
 import styles from "./ServiceCard.module.css";
 
 const ServiceCard = ({ number, title, description, image }) => {
-  const [isOpen, setIsOpen] = useState(false); // Estado para controlar el colapso
+  const [isOpen, setIsOpen] = useState(false);
   const cardRef = useRef();
   const contentRef = useRef();
   const iconRef = useRef();
 
   const toggleCard = () => {
+    const isMobile = window.innerWidth <= 768;
+    const targetHeight = isMobile ? "550px" : "350px";
+
     if (isOpen) {
       // Colapsar la tarjeta
       gsap.to(cardRef.current, {
@@ -28,7 +31,7 @@ const ServiceCard = ({ number, title, description, image }) => {
     } else {
       // Expandir la tarjeta
       gsap.to(cardRef.current, {
-        height: "350px", // Altura expandida
+        height: targetHeight,
         duration: 0.3,
         ease: "power3.out",
       });

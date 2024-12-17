@@ -3,10 +3,9 @@
   transition: opacity 0.3s ease-in-out;
   text-align: center;
   width: 100%;
-  border-bottom: 1px solid #6c63ff;
+  border-bottom: 1px solid #F2F9FF;
   height: 70px;
-  max-height: 350px; /* Altura expandida */
-  overflow: hidden; /* Esconde contenido al colapsar */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -104,4 +103,44 @@
   color: #555;
 }
 
-/* GSAP trabajará con estos cambios de altura y opacidad */
+@media(max-width:768px){
+  .card_title{
+    align-items: flex-start;
+  }
+  .card_header h3 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .card_content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .card_content .card_description {
+    width: 100%;
+    height: auto;
+    max-width: none;
+  }
+  .card_content .card_description p {
+    text-align: left;
+    font-size: 16px;
+    color: #F2F9FF;
+    font-weight: 300;
+  }
+  .card_content .card_image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card_content .card_image img {
+    margin-top: 2rem;
+  }
+  .icon {
+    border: 2px solid #6c63ff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 20px;
+  }
+}

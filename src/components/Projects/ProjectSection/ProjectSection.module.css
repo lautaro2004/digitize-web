@@ -1,0 +1,12 @@
+.project_section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  

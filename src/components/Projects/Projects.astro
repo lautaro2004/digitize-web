@@ -1,0 +1,19 @@
+---
+// Importamos los estilos generales y el componente React
+import styles from "./Projects.module.css";
+import SectionTitle from "../UI/Title/SectionTitle.jsx";
+import ProjectSection from "./ProjectSection/ProjectSection";
+
+---
+
+<div class={styles.projects_container}>
+  <!-- Título de la sección -->
+  <div class={styles.title_container}>
+    <SectionTitle title="Nuestros Proyectos" client:visible />
+  </div>
+  
+  <!-- Componente de React que contiene los proyectos -->
+  <div class={styles.section_projects}>
+    <ProjectSection client:visible/>
+  </div>
+</div>
